@@ -17,16 +17,16 @@ export const InvestmentForm: React.FC<InvestmentFormProps> = ({ params, setParam
       [name]: parseFloat(cleanedValue) || 0
     }));
   };
-// 新規追加
-const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-  const { name, value } = e.target;
-  const cleanedValue = value.replace(/^0+/, '') || '0';
+// 新規追加（フォーカス外れた時に整形）
+　const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+  　const { name, value } = e.target;
+  　const cleanedValue = value.replace(/^0+/, '') || '0';
 
-  setParams(prev => ({
-    ...prev,
-    [name]: parseFloat(cleanedValue) || 0
-  }));
-};
+  　setParams(prev => ({
+    　...prev,
+    　[name]: parseFloat(cleanedValue) || 0
+  　}));
+　};
   return (
     <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
       <h2 className="text-xl font-semibold text-gray-900 mb-6">投資シミュレーション</h2>
