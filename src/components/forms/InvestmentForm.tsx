@@ -18,7 +18,7 @@ export const InvestmentForm: React.FC<InvestmentFormProps> = ({ params, setParam
     }));
   };
   // 新規追加
-　const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
   const { name, value } = e.target;
   const cleanedValue = value.replace(/^0+/, '') || '0';
 
