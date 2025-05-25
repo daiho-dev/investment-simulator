@@ -47,7 +47,7 @@ export const GrowthChart: React.FC<GrowthChartProps> = ({ data }) => {
     ctx.textAlign = 'right';
     ctx.textBaseline = 'middle';
     ctx.fillStyle = '#6B7280';
-    ctx.font = '12px system-ui, -apple-system, sans-serif';
+    ctx.font = '14px system-ui, -apple-system, sans-serif';
 
     const yTicks = 5;
     for (let i = 0; i <= yTicks; i++) {
