@@ -26,6 +26,8 @@ export const InvestmentForm: React.FC<InvestmentFormProps> = ({ params, setParam
     　...prev,
     　[name]: parseFloat(cleanedValue) || 0
   　}));
+     // 表示も即座に書き換える
+     e.target.value = cleanedValue;
 　};
   return (
     <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
