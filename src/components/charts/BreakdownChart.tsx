@@ -34,8 +34,8 @@ export const BreakdownChart: React.FC<BreakdownChartProps> = ({ principal, inter
 
     // Draw pie chart
     const startAngle = -0.5 * Math.PI;
-    const principalEndAngle = (principalPercentage / 100) * 2 * Math.PI;
-    const interestEndAngle = 2 * Math.PI;
+    const principalEndAngle = startAngle + (principalPercentage / 100) * 2 * Math.PI;
+    const interestEndAngle = startAngle + 2 * Math.PI;
 
     // Principal slice
     ctx.beginPath();
