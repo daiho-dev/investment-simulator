@@ -13,7 +13,7 @@ export const GrowthChart: React.FC<GrowthChartProps> = ({ data }) => {
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+    if (!ctx) ctx.fontreturn;
 
     // Clear previous drawings
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -85,7 +85,7 @@ export const GrowthChart: React.FC<GrowthChartProps> = ({ data }) => {
     // Draw title
     ctx.textAlign = 'center';
     ctx.fillStyle = '#111827';
-    ctx.font = 'bold 14px system-ui, -apple-system, sans-serif';
+    ctx.font = 'bold 16px system-ui, -apple-system, sans-serif';
     ctx.fillText('資産残高の推移', canvas.width / 2, 20);
 
     // Draw principal line
@@ -137,7 +137,7 @@ export const GrowthChart: React.FC<GrowthChartProps> = ({ data }) => {
     
     ctx.textAlign = 'left';
     ctx.fillStyle = '#6B7280';
-    ctx.font = '12px system-ui, -apple-system, sans-serif';
+    ctx.font = '14px system-ui, -apple-system, sans-serif';
     ctx.fillText('元本', legendX + 50, legendY);
     
     // Balance legend
