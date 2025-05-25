@@ -18,7 +18,7 @@ export const GrowthChart: React.FC<GrowthChartProps> = ({ data }) => {
     // Clear previous drawings
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    const padding = { top: 50, right: 60, bottom: 40, left: 80 };
+    const padding = { top: 40, right: 160, bottom: 40, left: 80 };
     const chartWidth = canvas.width - padding.left - padding.right;
     const chartHeight = canvas.height - padding.top - padding.bottom;
 
@@ -122,34 +122,33 @@ export const GrowthChart: React.FC<GrowthChartProps> = ({ data }) => {
     }
     ctx.stroke();
 
-    // Draw legend with adjusted positioning
-    const legendY = padding.top - 25;
-    const legendSpacing = 200; // Increased spacing between legend items
+    // Draw legend on the right side
+    const legendX = canvas.width - padding.right + 20;
+    const legendY = padding.top + 20;
+    const legendSpacing = 60;
     
     // Principal legend
-    const principalLegendX = padding.left + 60;
     ctx.beginPath();
     ctx.strokeStyle = '#60A5FA';
     ctx.lineWidth = 2;
-    ctx.moveTo(principalLegendX, legendY);
-    ctx.lineTo(principalLegendX + 40, legendY);
+    ctx.moveTo(legendX, legendY);
+    ctx.lineTo(legendX + 40, legendY);
     ctx.stroke();
     
     ctx.textAlign = 'left';
     ctx.fillStyle = '#6B7280';
     ctx.font = '12px system-ui, -apple-system, sans-serif';
-    ctx.fillText('元本', principalLegendX + 50, legendY);
+    ctx.fillText('元本', legendX + 50, legendY);
     
     // Balance legend
-    const balanceLegendX = principalLegendX + legendSpacing;
     ctx.beginPath();
     ctx.strokeStyle = '#10B981';
     ctx.lineWidth = 2;
-    ctx.moveTo(balanceLegendX, legendY);
-    ctx.lineTo(balanceLegendX + 40, legendY);
+    ctx.moveTo(legendX, legendY + legendSpacing);
+    ctx.lineTo(legendX + 40, legendY + legendSpacing);
     ctx.stroke();
     
-    ctx.fillText('運用後残高', balanceLegendX + 50, legendY);
+    ctx.fillText('運用後残高', legendX + 50, legendY + legendSpacing);
   }, [data]);
 
   return (
