@@ -14,7 +14,7 @@ export const InvestmentForm: React.FC<InvestmentFormProps> = ({ params, setParam
     const cleanedValue = value.replace(/^0+/, '') || '0';
     setParams(prev => ({
       ...prev,
-      [name]: parseFloat(value) || 0
+      [name]: parseFloat(cleanedValue) || 0
     }));
   };
 
