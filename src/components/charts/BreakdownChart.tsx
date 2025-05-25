@@ -33,7 +33,7 @@ export const BreakdownChart: React.FC<BreakdownChartProps> = ({ principal, inter
     ctx.fillText('資産構成', centerX, 20);
 
     // Draw pie chart
-    const startAngle = 0;
+    const startAngle = -0.5 * Math.PI;
     const principalEndAngle = (principalPercentage / 100) * 2 * Math.PI;
     const interestEndAngle = 2 * Math.PI;
 
