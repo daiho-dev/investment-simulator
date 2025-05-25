@@ -123,6 +123,7 @@ export const GrowthChart: React.FC<GrowthChartProps> = ({ data }) => {
     ctx.stroke();
 
     // Draw legend
+    // 凡例位置を調整しました
     const legendY = padding.top - 30;
     
     // Principal
