@@ -17,7 +17,7 @@ export const InvestmentForm: React.FC<InvestmentFormProps> = ({ params, setParam
       [name]: parseFloat(cleanedValue) || 0
     }));
   };
-// 新規追加（フォーカス外れた時に整形）
+　// 新規追加（フォーカス外れた時に整形）
 　const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
   　const { name, value } = e.target;
   　const cleanedValue = value.replace(/^0+/, '') || '0';
