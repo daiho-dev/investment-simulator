@@ -123,7 +123,7 @@ export const GrowthChart: React.FC<GrowthChartProps> = ({ data }) => {
     ctx.stroke();
 
     // Draw legend
-    const legendY = padding.top - 15;
+    const legendY = padding.top - 30;
     
     // Principal
     ctx.beginPath();
