@@ -9,8 +9,6 @@ interface InvestmentFormProps {
 
 export const InvestmentForm: React.FC<InvestmentFormProps> = ({ params, setParams }) => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // 新規追加
-　　const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     // 先頭の0を削除（全部0なら '0' に）
     const cleanedValue = value.replace(/^0+/, '') || '0';
@@ -19,6 +17,16 @@ export const InvestmentForm: React.FC<InvestmentFormProps> = ({ params, setParam
       [name]: parseFloat(cleanedValue) || 0
     }));
   };
+  // 新規追加
+　const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+  const { name, value } = e.target;
+  const cleanedValue = value.replace(/^0+/, '') || '0';
+
+  setParams(prev => ({
+    ...prev,
+    [name]: parseFloat(cleanedValue) || 0
+  }));
+};
 
   return (
     <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
