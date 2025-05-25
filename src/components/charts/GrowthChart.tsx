@@ -124,7 +124,7 @@ export const GrowthChart: React.FC<GrowthChartProps> = ({ data }) => {
 
     // Draw legend with adjusted positioning
     const legendY = padding.top - 25;
-    const legendSpacing = 160; // Increased spacing between legend items
+    const legendSpacing = 200; // Increased spacing between legend items
     
     // Principal legend
     const principalLegendX = padding.left + 60;
